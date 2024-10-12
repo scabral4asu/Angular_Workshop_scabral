@@ -1,0 +1,15 @@
+<h1>{{title}}</h1>
+<div class="row">
+    <div *ngFor="let assignment of assignments" class="col-sm-6 mb-3 mt-4 mb-sm-0">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{assignment.title}}</h5>
+          <p class="card-text">{{assignment.description}}</p>
+          <p class="card-text">{{assignment.due_date}}</p>
+          <span *ngIf="assignment.status == 'Pending'" class="badge rounded-pill text-bg-warning">{{assignment.status}}</span>
+          <span *ngIf="assignment.status == 'In Progress'" class="badge rounded-pill text-bg-secondary">{{assignment.status}}</span>
+          <span *ngIf="assignment.status == 'Submitted'" class="badge rounded-pill text-bg-success">{{assignment.status}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
